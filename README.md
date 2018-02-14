@@ -38,7 +38,7 @@ An opinionated stylegiude for building large projects with react/redux & server 
 * all components should extend `React.PureComponent` by default, which does a shallow compare of props and prevents rerendering if they haven't changes. Prefer this over statelss functions
 * all components should use the translation helper `withTranslation` directly instead of passing it down from the container
 * if a shared component will always call the same action, make it a connected component instead of having to pass the action everytime it's used
-* instead of nesting complex conditionals & ternary checks in JSX, you can create variables with the partial component within the `render` method. These partial component variables should have names ending with `Partial`, eg: 
+* instead of nesting complex conditionals & ternary checks in JSX, you can create variables with the partial component within the `render` method. These partial component variables should have names ending with `Partial`, eg:
 ```
 // use this
 render() {
@@ -101,10 +101,10 @@ code --install-extension oderwat.indent-rainbow # adds colors for indentation le
 "globals":
   "document": true
   "window": true
-"rules": 
+"rules":
   // propTypes are optional as they can slow down the development if components are changing rapidly,
   // prefer unit tests over propTypes
-  "react/prop-types": 0 
+  "react/prop-types": 0
 "env":
   "jest": true
 ```
@@ -121,7 +121,7 @@ code --install-extension oderwat.indent-rainbow # adds colors for indentation le
 ---
 
 ## Scripts
-`package.json` should include the follwoing scripts
+`package.json` should include the following scripts
 * install `yarn`
 
 * to start the server & webpack with watching changes: `yarn dev`
