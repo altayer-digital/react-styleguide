@@ -35,7 +35,7 @@ An opinionated stylegiude for building large projects with react/redux & server 
 ---
 
 ## React/Redux Conventions
-* all components should extend `React.PureComponent` by default, which does a shallow compare of props and prevents rerendering if they haven't changes. Prefer this over statelss functions
+* all components should extend `React.PureComponent` by default, which does a shallow compare of props and prevents rerendering if they haven't changes. Prefer this over stateless functions
 * all components should use the translation helper `withTranslation` directly instead of passing it down from the container
 * if a shared component will always call the same action, make it a connected component instead of having to pass the action everytime it's used
 * instead of nesting complex conditionals & ternary checks in JSX, you can create variables with the partial component within the `render` method. These partial component variables should have names ending with `Partial`, eg:
@@ -67,7 +67,7 @@ render() {
 * each `.jsx` component should import its own style file, so that requiring a react component will automatically add its styles.
 * RTL support is achieved by using [rtlcss](http://rtlcss.com/), which automatically reverses all left/right rules in your css. To override this default behavior you can use [control directives](http://rtlcss.com/learn/usage-guide/control-directives/) or [value directives](http://rtlcss.com/learn/usage-guide/value-directives/). To keep these directives during webpack build, we must disable minification in all style loaders, which will be done by `WebpackRTLPlugin` eventually
 * instead of requiring global css (variables, mixins, normalize) in each file, use a webpack loader that preprends this import to every `.less` file
-* avoid using element type selectors like `a`, `span`,...
+* avoid using element type selectors like `a`, `span`, ... . and rather prefer naming each element with meaningful CSS class names.
 * icons are used from custom generated font file. Avoid using letter characters as content in font icons as it will show a random letter until the font loads
 ---
 
